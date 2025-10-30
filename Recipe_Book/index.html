@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Name] Recipe Book</title>
+    <link rel="icon" href="Favicon.jpg" type="image/jpg">
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>🍳 [Name] Recipe Book</h1>
+        <p>Explore Delicious Homemade Recipes Made Simple!</p>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="Recipe_Container">
+        <div class="Recipe_Card" onclick="Open_Modal('Biryani')">
+            <img src="B.jpg" alt="Biryani">
+            <h2>Hyderabadi Biryani</h2>
+            <p>Spicy rice cooked with tender chicken & rich spices.</p>
+        </div>
+
+        <div class="Recipe_Card" onclick="Open_Modal('Noodles')">
+            <img src="N.jpg" alt="Noodles">
+            <h2>Veg Hakka Noodles</h2>
+            <p>Quick, tasty, and full of flavor!</p>
+        </div>
+
+        <div class="Recipe_Card" onclick="Open_Modal('Chicken')">
+            <img src="C.jpg" alt="Chicken Curry">
+            <h2>Chicken Curry</h2>
+            <p>Rich & creamy Indian-style curry.</p>
+        </div>
+
+        <div class="Recipe_Card" onclick="Open_Modal('Paratha')">
+            <img src="P.jpg" alt="Paratha">
+            <h2>Stuffed Paratha</h2>
+            <p>Flaky, buttery & stuffed with spiced fillings.</p>
+        </div>
+    </main>
+
+    <!-- POPUPS / MODALS -->
+    <div id="Biryani" class="Modal">
+        <div class="Modal_Content">
+            <span class="Close" onclick="Close_Modal('Biryani')">&times;</span>
+            <img src="B.jpg" alt="Biryani" class="Modal_Img">
+            <h2>Hyderabadi Biryani 🍗</h2>
+            <h3>Ingredients:</h3>
+            <ul>
+                <li>Basmati rice - 2 cups</li>
+                <li>Chicken - 500g</li>
+                <li>Yogurt - 1 cup</li>
+                <li>Biryani masala - 2 tbsp</li>
+                <li>Fried onions, mint, coriander</li>
+            </ul>
+            <h3>Steps:</h3>
+            <ol>
+                <li>Marinate chicken with yogurt & spices for 30 mins.</li>
+                <li>Cook rice till half done.</li>
+                <li>Layer rice & chicken; cook on low flame (dum) for 20 mins.</li>
+                <li>Serve hot with raita.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="Noodles" class="Modal">
+        <div class="Modal_Content">
+            <span class="Close" onclick="Close_Modal('Noodles')">&times;</span>
+            <img src="N.jpg" alt="Noodles" class="Modal_Img">
+            <h2>Veg Hakka Noodles 🍜</h2>
+            <h3>Ingredients:</h3>
+            <ul>
+                <li>Noodles - 200g</li>
+                <li>Mixed veggies - 1 cup</li>
+                <li>Soy sauce - 2 tbsp</li>
+                <li>Garlic - 4 cloves</li>
+                <li>Oil, salt & pepper</li>
+            </ul>
+            <h3>Steps:</h3>
+            <ol>
+                <li>Boil noodles & drain.</li>
+                <li>Stir-fry garlic & veggies.</li>
+                <li>Add noodles, soy sauce & toss well.</li>
+                <li>Serve hot.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="Chicken" class="Modal">
+        <div class="Modal_Content">
+            <span class="Close" onclick="Close_Modal('Chicken')">&times;</span>
+            <img src="C.jpg" alt="Chicken Curry" class="Modal_Img">
+            <h2>Chicken Curry 🍛</h2>
+            <h3>Ingredients:</h3>
+            <ul>
+                <li>Chicken - 500g</li>
+                <li>Onion, tomato, ginger-garlic paste</li>
+                <li>Curry powder - 2 tbsp</li>
+                <li>Oil & salt to taste</li>
+            </ul>
+            <h3>Steps:</h3>
+            <ol>
+                <li>Fry onions until golden.</li>
+                <li>Add tomatoes & spices, cook well.</li>
+                <li>Add chicken, cook until tender.</li>
+                <li>Garnish with coriander & serve hot.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="Paratha" class="Modal">
+        <div class="Modal_Content">
+            <span class="Close" onclick="Close_Modal('Paratha')">&times;</span>
+            <img src="P.jpg" alt="Paratha" class="Modal_Img">
+            <h2>Stuffed Paratha 🫓</h2>
+            <h3>Ingredients:</h3>
+            <ul>
+                <li>Wheat flour dough</li>
+                <li>Stuffing (potato or paneer)</li>
+                <li>Ghee for roasting</li>
+            </ul>
+            <h3>Steps:</h3>
+            <ol>
+                <li>Roll dough, fill stuffing, seal edges.</li>
+                <li>Roll again gently.</li>
+                <li>Roast both sides with ghee.</li>
+                <li>Serve hot with curd or pickle.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script>
+        function Open_Modal(id) {
+            document.getElementById(id).style.display = "flex";
+        }
+        function Close_Modal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+    </script>
+</body>
+</html>
