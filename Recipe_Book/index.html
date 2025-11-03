@@ -1,145 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Name] Recipe Book</title>
-    <link rel="icon" href="Favicon.jpg" type="image/jpg">
-    <link rel="stylesheet" href="Style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hungry Notebook</title>
+  <link rel="stylesheet" href="Style.css">
 </head>
 <body>
+  <header>
+    <h1>🍴 Hungry Notebook</h1>
+    <nav class="top-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="Contact_Us/index.html">Contact</a>
+      <a href="Feedback_And_QnA/index.html">Feedback</a>
+      <a href="Sign_Up/index.html">Sign Up</a>
+    </nav>
+  </header>
 
-    <!-- HEADER -->
-    <header>
-        <h1>🍳 [Name] Recipe Book</h1>
-        <p>Explore Delicious Homemade Recipes Made Simple!</p>
-    </header>
+  <section id="categories" class="category-bar">
+    <button class="tab-btn" data-type="all">🍽️ All Food</button>
+    <button class="tab-btn" data-type="punjabi">🧈 Punjabi</button>
+    <button class="tab-btn" data-type="rajasthani">🫓 Rajasthani</button>
+    <button class="tab-btn" data-type="italian">🍕 Italian</button>
+    <button class="tab-btn" data-type="south">🍛 South Indian</button>
+  </section>
 
-    <!-- MAIN CONTENT -->
-    <main class="Recipe_Container">
-        <div class="Recipe_Card" onclick="Open_Modal('Biryani')">
-            <img src="B.jpg" alt="Biryani">
-            <h2>Hyderabadi Biryani</h2>
-            <p>Spicy rice cooked with tender chicken & rich spices.</p>
-        </div>
+  <main>
+    <section id="punjabi" class="food-type active">
+      <h2>🧈 Punjabi Delights</h2>
+      <div class="recipe-card punjabi-card">
+        <img src="Images/punjabi1.jpg" alt="Butter Chicken">
+        <h3>Butter Chicken</h3>
+        <p>Creamy, rich and full of authentic Punjabi flavors.</p>
+      </div>
+      <div class="recipe-card punjabi-card">
+        <img src="Images/punjabi2.jpg" alt="Chole Bhature">
+        <h3>Chole Bhature</h3>
+        <p>Spicy chickpeas served with fluffy fried bread.</p>
+      </div>
+    </section>
 
-        <div class="Recipe_Card" onclick="Open_Modal('Noodles')">
-            <img src="N.jpg" alt="Noodles">
-            <h2>Veg Hakka Noodles</h2>
-            <p>Quick, tasty, and full of flavor!</p>
-        </div>
+    <section id="rajasthani" class="food-type">
+      <h2>🫓 Rajasthani Specials</h2>
+      <div class="recipe-card rajasthani-card">
+        <img src="Images/rajasthani1.jpg" alt="Dal Baati Churma">
+        <h3>Dal Baati Churma</h3>
+        <p>A royal trio — spicy dal, crispy baati & sweet churma.</p>
+      </div>
+      <div class="recipe-card rajasthani-card">
+        <img src="Images/rajasthani2.jpg" alt="Gatte ki Sabzi">
+        <h3>Gatte ki Sabzi</h3>
+        <p>Gram flour dumplings cooked in tangy yogurt gravy.</p>
+      </div>
+    </section>
 
-        <div class="Recipe_Card" onclick="Open_Modal('Chicken')">
-            <img src="C.jpg" alt="Chicken Curry">
-            <h2>Chicken Curry</h2>
-            <p>Rich & creamy Indian-style curry.</p>
-        </div>
+    <section id="italian" class="food-type">
+      <h2>🍕 Italian Favorites</h2>
+      <div class="recipe-card italian-card">
+        <img src="Images/italian1.jpg" alt="Margherita Pizza">
+        <h3>Margherita Pizza</h3>
+        <p>Classic thin crust pizza topped with fresh basil and cheese.</p>
+      </div>
+      <div class="recipe-card italian-card">
+        <img src="Images/italian2.jpg" alt="Pasta Alfredo">
+        <h3>Pasta Alfredo</h3>
+        <p>Creamy pasta tossed in buttery white sauce.</p>
+      </div>
+    </section>
 
-        <div class="Recipe_Card" onclick="Open_Modal('Paratha')">
-            <img src="P.jpg" alt="Paratha">
-            <h2>Stuffed Paratha</h2>
-            <p>Flaky, buttery & stuffed with spiced fillings.</p>
-        </div>
-    </main>
+    <section id="south" class="food-type">
+      <h2>🍛 South Indian Treats</h2>
+      <div class="recipe-card south-card">
+        <img src="Images/south1.jpg" alt="Masala Dosa">
+        <h3>Masala Dosa</h3>
+        <p>Golden crisp dosa stuffed with spicy mashed potatoes.</p>
+      </div>
+      <div class="recipe-card south-card">
+        <img src="Images/south2.jpg" alt="Idli Sambar">
+        <h3>Idli Sambar</h3>
+        <p>Soft idlis served with hot sambar and coconut chutney.</p>
+      </div>
+    </section>
+  </main>
 
-    <!-- POPUPS / MODALS -->
-    <div id="Biryani" class="Modal">
-        <div class="Modal_Content">
-            <span class="Close" onclick="Close_Modal('Biryani')">&times;</span>
-            <img src="B.jpg" alt="Biryani" class="Modal_Img">
-            <h2>Hyderabadi Biryani 🍗</h2>
-            <h3>Ingredients:</h3>
-            <ul>
-                <li>Basmati rice - 2 cups</li>
-                <li>Chicken - 500g</li>
-                <li>Yogurt - 1 cup</li>
-                <li>Biryani masala - 2 tbsp</li>
-                <li>Fried onions, mint, coriander</li>
-            </ul>
-            <h3>Steps:</h3>
-            <ol>
-                <li>Marinate chicken with yogurt & spices for 30 mins.</li>
-                <li>Cook rice till half done.</li>
-                <li>Layer rice & chicken; cook on low flame (dum) for 20 mins.</li>
-                <li>Serve hot with raita.</li>
-            </ol>
-        </div>
-    </div>
+  <footer>
+    <p>© 2025 Hungry Notebook | Made with ❤️ by Food Lovers</p>
+  </footer>
 
-    <div id="Noodles" class="Modal">
-        <div class="Modal_Content">
-            <span class="Close" onclick="Close_Modal('Noodles')">&times;</span>
-            <img src="N.jpg" alt="Noodles" class="Modal_Img">
-            <h2>Veg Hakka Noodles 🍜</h2>
-            <h3>Ingredients:</h3>
-            <ul>
-                <li>Noodles - 200g</li>
-                <li>Mixed veggies - 1 cup</li>
-                <li>Soy sauce - 2 tbsp</li>
-                <li>Garlic - 4 cloves</li>
-                <li>Oil, salt & pepper</li>
-            </ul>
-            <h3>Steps:</h3>
-            <ol>
-                <li>Boil noodles & drain.</li>
-                <li>Stir-fry garlic & veggies.</li>
-                <li>Add noodles, soy sauce & toss well.</li>
-                <li>Serve hot.</li>
-            </ol>
-        </div>
-    </div>
-
-    <div id="Chicken" class="Modal">
-        <div class="Modal_Content">
-            <span class="Close" onclick="Close_Modal('Chicken')">&times;</span>
-            <img src="C.jpg" alt="Chicken Curry" class="Modal_Img">
-            <h2>Chicken Curry 🍛</h2>
-            <h3>Ingredients:</h3>
-            <ul>
-                <li>Chicken - 500g</li>
-                <li>Onion, tomato, ginger-garlic paste</li>
-                <li>Curry powder - 2 tbsp</li>
-                <li>Oil & salt to taste</li>
-            </ul>
-            <h3>Steps:</h3>
-            <ol>
-                <li>Fry onions until golden.</li>
-                <li>Add tomatoes & spices, cook well.</li>
-                <li>Add chicken, cook until tender.</li>
-                <li>Garnish with coriander & serve hot.</li>
-            </ol>
-        </div>
-    </div>
-
-    <div id="Paratha" class="Modal">
-        <div class="Modal_Content">
-            <span class="Close" onclick="Close_Modal('Paratha')">&times;</span>
-            <img src="P.jpg" alt="Paratha" class="Modal_Img">
-            <h2>Stuffed Paratha 🫓</h2>
-            <h3>Ingredients:</h3>
-            <ul>
-                <li>Wheat flour dough</li>
-                <li>Stuffing (potato or paneer)</li>
-                <li>Ghee for roasting</li>
-            </ul>
-            <h3>Steps:</h3>
-            <ol>
-                <li>Roll dough, fill stuffing, seal edges.</li>
-                <li>Roll again gently.</li>
-                <li>Roast both sides with ghee.</li>
-                <li>Serve hot with curd or pickle.</li>
-            </ol>
-        </div>
-    </div>
-
-    <!-- JS -->
-    <script>
-        function Open_Modal(id) {
-            document.getElementById(id).style.display = "flex";
-        }
-        function Close_Modal(id) {
-            document.getElementById(id).style.display = "none";
-        }
-    </script>
+  <script src="Script.js"></script>
 </body>
 </html>
