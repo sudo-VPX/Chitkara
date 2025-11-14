@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hungry Notebook</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🍴 Hungry Notebook</h1>
+    <nav>
+      <ul>
+        <li onclick="showAllFoods()">All Foods</li>
+        <li onclick="filterCategory('Punjabi')">Punjabi</li>
+        <li onclick="filterCategory('Rajasthani')">Rajasthani</li>
+        <li onclick="filterCategory('Italian')">Italian</li>
+        <li onclick="filterCategory('South Indian')">South Indian</li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="food-container"></main>
+
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup()">&times;</span>
+      <img id="popup-img" src="" alt="Food Image">
+      <h2 id="popup-title"></h2>
+      <h3>Things Required</h3>
+      <pre id="popup-ingredients"></pre>
+      <h3>Recipe</h3>
+      <pre id="popup-recipe"></pre>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
