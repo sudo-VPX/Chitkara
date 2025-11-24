@@ -460,9 +460,17 @@
         t: "Spring Rolls",
         i: "Images/Roll.jpg",
         p: [
-          "Prepare spicy noodle-vegetable stuffing.",
-          "Fill and roll tightly.",
-          "Fry until golden brown."
+          "1. Prepare the filling: heat oil in a pan, add chopped vegetables (cabbage, carrot, capsicum) and sauté for 2–3 minutes.",
+          "2. Add soy sauce, vinegar, salt, pepper, and cook until veggies are slightly tender.",
+          "3. Let the filling cool completely.",
+          "4. Place a spring roll sheet on a flat surface and add 1–2 tbsp of filling.",
+          "5. Roll tightly while folding the sides inward.",
+          "6. Seal the edge with a paste of flour + water.",
+          "7. Heat oil in a pan on medium flame.",
+          "8. Deep fry the rolls until golden and crispy.",
+          "9. Remove and drain excess oil on tissue paper.",
+          "10. Serve hot with chili sauce or ketchup.",
+
         ]
       },
 
@@ -534,6 +542,13 @@
     function closePop() {
       popup.style.display = "none";
     }
+
+    popup.addEventListener("click", function (e) {
+      if (e.target === popup) {
+        closePop();
+      }
+    });
+
 
   </script>
 
