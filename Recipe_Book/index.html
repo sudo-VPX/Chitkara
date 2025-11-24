@@ -11,151 +11,186 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Poppins, sans-serif
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     body {
-      background: #0f0f0f;
-      color: #fff
+      background: linear-gradient(135deg, #140f18, #221b2c, #2e2140);
+      color: #fff;
+      min-height: 100vh;
     }
 
     header {
-      padding: 20px;
-      background: linear-gradient(45deg, #ff512f, #dd2476);
+      background: linear-gradient(90deg, #ff512f, #dd2476);
+      padding: 20px 30px;
       text-align: center;
-      font-size: 28px;
-      font-weight: 700
+      font-size: 30px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.5);
+      position: sticky;
+      top: 0;
+      z-index: 20;
     }
 
     nav {
       display: flex;
       justify-content: center;
-      gap: 20px;
-      margin-top: 15px
+      gap: 15px;
+      padding: 20px;
     }
 
     nav button {
       padding: 10px 22px;
-      background: #fff;
-      color: #000;
+      font-size: 15px;
       border: none;
-      border-radius: 12px;
-      font-weight: 600;
+      border-radius: 30px;
       cursor: pointer;
-      transition: .3s
+      color: white;
+      background: linear-gradient(135deg, #ff512f, #dd2476);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+      transition: transform .28s ease, opacity .3s ease, box-shadow .3s ease;
     }
 
     nav button:hover {
-      transform: scale(1.1)
+      transform: translateY(-4px) scale(1.1);
+      opacity: .92;
+      box-shadow: 0 7px 25px rgba(0, 0, 0, 0.55);
+    }
+
+    nav button:active {
+      transform: scale(.95);
     }
 
     .category-box {
       margin: 30px 20px 10px 20px;
-      padding: 14px;
-      border-radius: 14px;
-      font-size: 24px;
-      font-weight: 600;
-      width: fit-content
+      padding: 14px 24px;
+      border-radius: 30px;
+      font-size: 22px;
+      width: fit-content;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(4px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     }
 
-    .cat1 { background: #ff6b6b }
-    .cat2 { background: #ffa534 }
-    .cat3 { background: #3498db }
-    .cat4 { background: #9b59b6 }
-
     main {
-      padding: 20px;
+      padding: 40px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      animation: fadeIn .8s ease;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
     }
 
     .card {
-      background: #1b1b1b;
+      background: rgba(255, 255, 255, 0.08);
       padding: 15px;
-      border-radius: 16px;
-      transition: .3s;
-      cursor: pointer
+      border-radius: 20px;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(4px);
+      transition: transform .3s ease, box-shadow .3s ease;
     }
 
     .card:hover {
-      transform: scale(1.05)
+      transform: translateY(-6px) scale(1.05);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
     }
 
     .card img {
       width: 100%;
       height: 180px;
       object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 10px
+      border-radius: 15px;
+      margin-bottom: 10px;
     }
 
     .modal-bg {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, .78);
+      background: rgba(0, 0, 0, .72);
       display: none;
       justify-content: center;
       align-items: center;
       padding: 20px;
-      backdrop-filter: blur(3px)
+      backdrop-filter: blur(6px);
+      animation: fadeIn .5s ease;
+      z-index: 100;
     }
 
     .modal {
-      background: #1b1b1b;
+      background: rgba(255, 255, 255, 0.09);
       width: 95%;
       max-width: 720px;
       padding: 30px;
-      border-radius: 22px;
-      max-height: 90vh;
-      overflow: hidden;
+      border-radius: 25px;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
       display: flex;
       flex-direction: column;
-      gap: 20px
+      gap: 20px;
+      animation: fadeIn .7s ease;
     }
 
     .modal img {
       width: 100%;
       height: 260px;
       object-fit: cover;
-      border-radius: 16px
+      border-radius: 16px;
     }
 
     .modal h2 {
-      font-size: 26px
+      font-size: 26px;
+      letter-spacing: 1px;
     }
 
     .modal ul {
-      padding-left: 24px;
       max-height: 45vh;
-      overflow-y: auto
-    }
-
-    .modal ul::-webkit-scrollbar {
-      width: 0
+      overflow-y: auto;
+      padding-left: 24px;
     }
 
     .modal li {
       margin-bottom: 10px;
       opacity: .9;
-      font-size: 16px;
-      line-height: 1.4
+      font-size: 17px;
     }
 
     .close {
       padding: 14px;
-      background: #ff4747;
+      background: linear-gradient(135deg, #ff512f, #dd2476);
       border: none;
-      border-radius: 12px;
-      font-weight: 600;
-      color: #fff;
-      cursor: pointer;
+      border-radius: 30px;
       font-size: 18px;
-      transition: .3s
+      font-weight: 600;
+      cursor: pointer;
+      color: #fff;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+      transition: .3s ease;
     }
 
     .close:hover {
-      transform: scale(1.05)
+      transform: translateY(-3px) scale(1.07);
+    }
+
+    .modal ul {
+      max-height: 45vh;
+      overflow-y: scroll;
+      padding-left: 24px;
+      scrollbar-width: none;
+    }
+
+    .modal ul::-webkit-scrollbar {
+      display: none;
     }
   </style>
 </head>
@@ -184,177 +219,309 @@
   </div>
 
   <script>
+
     const data = [
+
+      /* ---------------------- Punjabi Food ---------------------- */
+
       {
         c: "Punjabi Food",
         t: "Paneer Butter Masala",
-        i: "https://i.imgur.com/mT8C0b2.jpeg",
+        i: "Images/Paneer_Butter_Masala.jpg",
         p: [
-          "Heat butter in a thick pan until it melts completely and release aroma before adding finely chopped onions.",
-          "Cook onions slowly until golden brown while stirring to avoid burning and maintain smooth gravy texture.",
-          "Add tomato puree and cook for several minutes until oil starts separating indicating mixture is properly cooked.",
-          "Sprinkle spices like red chili, turmeric, garam masala and stir gently for balanced flavor infusion.",
-          "Add paneer cubes carefully ensuring they do not break while mixing into the gravy base.",
-          "Pour fresh cream slowly and mix to get rich smooth texture ideal for restaurant-style finish.",
-          "Simmer on low flame for a few minutes allowing flavors to settle well into paneer.",
-          "Add crushed kasuri methi for authentic aroma and mix gently before serving."
+          "Melt butter in a heavy pan and add finely chopped onions. Cook on low flame to develop sweetness and depth.",
+          "Add ginger-garlic paste and sauté until raw smell completely disappears.",
+          "Add tomato puree and cook till oil separates — this step gives true restaurant-style richness.",
+          "Mix in cashew paste slowly, ensuring it blends evenly to create creamy texture.",
+          "Add spices: red chili powder, coriander powder, turmeric, garam masala and salt as needed.",
+          "Cook the gravy on low flame for 10 minutes to allow the flavors to blend.",
+          "Add paneer cubes gently and mix without breaking them.",
+          "Pour fresh cream and simmer for 3–4 minutes to reach perfect creamy thickness.",
+          "Add crushed kasuri methi and butter on top before serving."
         ]
       },
 
       {
         c: "Punjabi Food",
         t: "Chole Bhature",
-        i: "https://i.imgur.com/GSOQHh9.jpeg",
+        i: "Images/CB.jpg",
         p: [
-          "Soak chole overnight so they absorb enough water to cook soft and fluffy the next day.",
-          "Boil chole with salt and tea bag to get dark restaurant-style color and richer taste.",
-          "Prepare masala with onions, tomatoes, ginger and garlic cooked until oil fully separates.",
-          "Add spices slowly and mix well to develop deep Punjabi flavors in the thick gravy.",
-          "Knead dough for bhature with curd and a little sugar to make them puff beautifully.",
-          "Roll bhature evenly and fry in hot oil until they become golden and crispy.",
-          "Serve hot with onions, green chutney and lemon to enhance flavour experience."
+          "Soak chole overnight; they must double in size for best texture.",
+          "Boil chole with salt, bay leaf, black cardamom, and a tea bag to get authentic dark color.",
+          "Prepare onion-tomato masala by cooking until oil completely separates.",
+          "Add roasted chole masala, amchur, red chili, turmeric and mix well.",
+          "Add boiled chole along with some stock water. Simmer 20–25 minutes.",
+          "Knead dough for bhature using maida, curd, baking soda, sugar, salt and oil.",
+          "Let dough rest 2 hours. Roll evenly and deep fry until puffed and crispy."
         ]
       },
 
       {
         c: "Punjabi Food",
         t: "Amritsari Kulcha",
-        i: "https://i.imgur.com/0wjkXQF.jpeg",
+        i: "Images/AK.jpg",
         p: [
-          "Prepare dough using refined flour, curd and oil.",
-          "Make stuffing using mashed potatoes and spices.",
-          "Roll and fill kulchas evenly.",
-          "Cook in tandoor or tawa until golden."
+          "Prepare dough with flour, curd, baking powder, salt and a little sugar.",
+          "Make stuffing using potatoes, coriander, green chili, ajwain and spices.",
+          "Roll dough, fill stuffing evenly and seal properly.",
+          "Sprinkle sesame seeds and coriander on top and press lightly.",
+          "Cook in tandoor or tawa until crispy golden spots appear."
         ]
       },
 
       {
-        c: "Rajasthani Food",
-        t: "Dal Baati",
-        i: "https://i.imgur.com/dra7iOB.jpeg",
+        c: "Punjabi Food",
+        t: "Punjabi Dal Makhani",
+        i: "Images/DM.jpg",
         p: [
-          "Prepare dal using a mix of toor, moong and chana dal cooked together until mushy.",
-          "Add tadka using ghee, garlic, cumin and red chilli to give smoky Rajasthani flavor.",
-          "Knead stiff dough for baati and shape them into firm balls for proper roasting.",
-          "Bake baatis slowly until crisp from outside but soft inside for perfect texture.",
-          "Break hot baatis and pour melted ghee generously before serving with dal."
+          "Soak black urad dal and rajma overnight.",
+          "Pressure cook them until soft and creamy.",
+          "Prepare tadka using butter, ginger-garlic, onions and tomatoes.",
+          "Add dal, cream, butter and simmer for 45 minutes on low flame.",
+          "Add kasuri methi and serve with naan."
+        ]
+      },
+
+      {
+        c: "Punjabi Food",
+        t: "Tandoori Chicken",
+        i: "Images/Tandoori_Chicken.jpg",
+        p: [
+          "Make deep cuts on chicken for proper marination.",
+          "Prepare marinade using curd, lemon, garlic, ginger, red chili, and tandoori masala.",
+          "Marinate chicken at least 6 hours.",
+          "Cook in tandoor or oven until smoky and slightly charred.",
+          "Brush with butter and serve with onions."
+        ]
+      },
+
+      /* ---------------------- Rajasthani Food ---------------------- */
+
+      {
+        c: "Rajasthani Food",
+        t: "Dal Baati Churma",
+        i: "Images/Churma.jpg",
+        p: [
+          "Cook a mix of toor, moong and chana dal until soft and mushy.",
+          "Prepare tadka using ghee, garlic, cumin, dry red chilies and hing.",
+          "Pour tadka into dal and simmer 10 minutes.",
+          "Knead stiff dough for baati with wheat flour, salt, ghee.",
+          "Bake baati in tandoor or oven until crisp.",
+          "Break hot baati and pour melted ghee over it.",
+          "Make churma by crushing baati and mixing with sugar."
         ]
       },
 
       {
         c: "Rajasthani Food",
         t: "Gatte Ki Sabzi",
-        i: "https://i.imgur.com/Zl89t1H.jpeg",
+        i: "Images/Gatte.jpg",
         p: [
-          "Prepare dough using besan, curd, and spices creating firm rollable consistency.",
-          "Boil gatte cylinders in water until they rise to surface indicating readiness.",
-          "Cut boiled gatte and add into thick curd-based gravy simmered with Indian spices.",
-          "Cook slowly so gatte absorb flavors and gravy becomes rich and creamy."
+          "Prepare dough using besan, yogurt, oil and spices.",
+          "Roll into cylindrical shapes and boil until they float.",
+          "Cut boiled gatte into pieces.",
+          "Prepare gravy using yogurt, besan, spices and ghee.",
+          "Add gatte and simmer 20 minutes."
         ]
       },
 
       {
         c: "Rajasthani Food",
         t: "Ker Sangri",
-        i: "https://i.imgur.com/uf9muu7.jpeg",
+        i: "Images/Sangri.jpg",
         p: [
-          "Soak ker and sangri overnight.",
+          "Soak ker and sangri overnight to remove bitterness.",
           "Boil until soft.",
-          "Cook in oil with spices.",
-          "Simmer until flavors deepen."
+          "Cook in oil with spices like hing, chili and coriander.",
+          "Simmer to deepen flavor.",
+          "Add lemon juice before serving."
         ]
       },
 
       {
+        c: "Rajasthani Food",
+        t: "Mirchi Vada",
+        i: "Images/C.jpg",
+        p: [
+          "Boil potatoes and prepare spicy stuffing.",
+          "Fill inside large green chilies.",
+          "Dip in besan batter and deep fry.",
+          "Serve with chutney."
+        ]
+      },
+
+      {
+        c: "Rajasthani Food",
+        t: "Laal Maas",
+        i: "Images/LM.jpg",
+        p: [
+          "Marinate mutton with curd, chili and spices.",
+          "Cook onions until brown, add marinated meat.",
+          "Add whole spices and cook until soft.",
+          "Simmer until gravy thickens and becomes smoky."
+        ]
+      },
+
+      /* ---------------------- Italian Food ---------------------- */
+
+      {
         c: "Italian Food",
         t: "Pasta Alfredo",
-        i: "https://i.imgur.com/jTQ5bp6.jpeg",
+        i: "Images/Pasta.jpg",
         p: [
-          "Boil pasta al dente ensuring it remains firm enough for creamy Alfredo sauce.",
-          "Melt butter with garlic until aromatic then add cream and simmer till thick.",
-          "Add parmesan cheese slowly while stirring to avoid lumps and get smooth texture.",
-          "Mix pasta gently ensuring sauce coats completely for authentic Italian taste."
+          "Boil pasta until firm.",
+          "Heat butter and sauté garlic.",
+          "Add cream and parmesan, cook until thick.",
+          "Mix pasta and coat evenly.",
+          "Add pepper and oregano."
         ]
       },
 
       {
         c: "Italian Food",
         t: "Pizza Margherita",
-        i: "https://i.imgur.com/rq7SVIJ.jpeg",
+        i: "Images/M_P.jpg",
         p: [
-          "Prepare dough with yeast and allow proper fermentation for soft airy pizza base.",
-          "Spread tomato sauce evenly followed by mozzarella for classic Italian flavor.",
-          "Add basil leaves and drizzle olive oil before baking at high temperature.",
-          "Remove when edges turn crisp and cheese melts perfectly."
+          "Prepare yeast dough and let rise for 2 hours.",
+          "Roll dough, spread sauce evenly.",
+          "Add mozzarella slices and fresh basil.",
+          "Bake at high temperature until crisp.",
+          "Finish with olive oil drizzle."
         ]
       },
 
       {
         c: "Italian Food",
         t: "Garlic Bread",
-        i: "https://i.imgur.com/OztpHMo.jpeg",
+        i: "Images/Bread.jpg",
         p: [
           "Mix butter, garlic and herbs.",
           "Spread on bread slices.",
-          "Toast until crisp."
+          "Bake until golden and crispy.",
+          "Add cheese for extra richness."
         ]
       },
 
       {
+        c: "Italian Food",
+        t: "Cheesy Lasagna",
+        i: "Images/Lasagna.jpg",
+        p: [
+          "Boil lasagna sheets.",
+          "Prepare red sauce with tomato, garlic and herbs.",
+          "Make white sauce with butter, flour and milk.",
+          "Layer pasta, red sauce, white sauce and cheese.",
+          "Bake until bubbly."
+        ]
+      },
+
+      {
+        c: "Italian Food",
+        t: "White Sauce Pizza",
+        i: "Images/Pizza.jpg",
+        p: [
+          "Prepare white sauce using butter, flour and milk.",
+          "Spread on pizza base.",
+          "Add vegetables and cheese.",
+          "Bake until golden."
+        ]
+      },
+
+      /* ---------------------- Other Food ---------------------- */
+
+      {
         c: "Other Food",
         t: "Fried Rice",
-        i: "https://i.imgur.com/t4oAg4U.jpeg",
+        i: "Images/Rice.jpg",
         p: [
-          "Cook rice earlier and cool completely to avoid sticking during high flame tossing.",
-          "Heat oil and fry garlic until aromatic then add finely chopped vegetables.",
-          "Toss on high heat continuously to keep rice dry and flavorful.",
-          "Add soy, vinegar, pepper and mix gently before serving."
+          "Use completely cooled rice.",
+          "Fry garlic on high heat.",
+          "Add vegetables and toss.",
+          "Add sauces and mix rice evenly.",
+          "Finish with spring onions."
         ]
       },
 
       {
         c: "Other Food",
         t: "Momos",
-        i: "https://i.imgur.com/jVbWYVO.jpeg",
+        i: "Images/Momo.jpg",
         p: [
-          "Make soft dough for momos and rest it to improve elasticity for shaping.",
-          "Prepare filling using cabbage, carrot, onion, pepper and a little soy sauce.",
-          "Shape momos carefully sealing edges tightly to avoid leaks while steaming.",
-          "Steam 10 minutes and serve with spicy chutney."
+          "Make soft dough.",
+          "Mix vegetable stuffing.",
+          "Fill and shape momos.",
+          "Steam for 10–12 minutes.",
+          "Serve with spicy chutney."
         ]
       },
 
       {
         c: "Other Food",
         t: "Spring Rolls",
-        i: "https://i.imgur.com/CvqvUdb.jpeg",
+        i: "Images/Roll.jpg",
         p: [
-          "Prepare filling using cabbage, noodles and veggies.",
-          "Fill and roll sheets tightly.",
-          "Fry until golden."
+          "Prepare spicy noodle-vegetable stuffing.",
+          "Fill and roll tightly.",
+          "Fry until golden brown."
+        ]
+      },
+
+      {
+        c: "Other Food",
+        t: "Veg Burger",
+        i: "Images/B.jpg",
+        p: [
+          "Prepare patty using potatoes, peas and spices.",
+          "Shallow fry until crisp.",
+          "Assemble burger with mayonnaise and veggies."
+        ]
+      },
+
+      {
+        c: "Other Food",
+        t: "French Fries",
+        i: "Images/FF.jpg",
+        p: [
+          "Cut potatoes and soak 20 minutes.",
+          "Parboil and freeze 30 minutes.",
+          "Deep fry twice for perfect crispiness."
         ]
       }
+
     ];
 
-    let prevCat = "";
-    const catBox = document.getElementById("categories");
+    const grouped = {};
+    data.forEach(item => {
+      if (!grouped[item.c]) grouped[item.c] = [];
+      grouped[item.c].push(item);
+    });
+
     const container = document.getElementById("recipes");
 
-    data.forEach((r, x) => {
-      if (r.c !== prevCat) {
-        let colorClass =
-          r.c === "Punjabi Food" ? "cat1" :
-          r.c === "Rajasthani Food" ? "cat2" :
-          r.c === "Italian Food" ? "cat3" : "cat4";
-
-        catBox.innerHTML += `<div class="category-box ${colorClass}">${r.c}</div>`;
-        prevCat = r.c;
-      }
+    Object.keys(grouped).forEach(cat => {
       container.innerHTML += `
-        <div class="card" onclick="openPop(${x})">
-          <img src="${r.i}">
-          <h3>${r.t}</h3>
-        </div>`;
+    <h2 style="
+      margin: 10px 0 25px;
+      font-size: 32px;
+      background: rgba(255,255,255,0.12);
+      padding: 12px 20px;
+      border-radius: 18px;
+      text-align: center;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+      grid-column: 1/-1;
+    ">${cat}</h2>
+  `;
+
+      grouped[cat].forEach((item) => {
+        const x = data.indexOf(item);
+        container.innerHTML += `
+      <div class="card" onclick="openPop(${x})">
+        <img src="${item.i}">
+        <h3>${item.t}</h3>
+      </div>
+    `;
+      });
     });
 
     function openPop(x) {
@@ -367,7 +534,12 @@
     function closePop() {
       popup.style.display = "none";
     }
+
   </script>
 
+
+
+
 </body>
+
 </html>
